@@ -11,21 +11,22 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:ems="10"
-        android:inputType="textPersonName"
         android:text="@string/my_notes_header"
         android:textSize="34sp" />
 
     <ListView
         android:id="@+id/mynotes_list"
         android:layout_width="match_parent"
-        android:layout_height="450dp" />
+        android:layout_height="400dp"
+        android:background="#C4F0F6" >
+    </ListView>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:text="@string/mynotes_button_new_note"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        android:onClick="createNewNote"/>
 
 </LinearLayout>

@@ -12,4 +12,10 @@
     <string name="counterButtonZero">ZERUJ</string>
     <string name="my_notes_header">Here are my notes:</string>
     <string name="mynotes_button_new_note">NOWA NOTATKA</string>
+    <string name="mynotes_title_header">Tytuł:</string>
+    <string name="mynotes_new_message_title_hint">write some title</string>
+    <string name="mynotes_new_message_content_header">Treść</string>
+    <string name="mynotes_new_message_content">jakaś treść notatki...</string>
+    <string name="mynotes_button_new_note_save">ZAPISZ</string>
+    <string name="mynotes_button_new_note_cancel">ODRZUĆ</string>
 </resources>
