@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">my_notes</string>
+    <string name="app_name">My notes</string>
+    <string name="edit_message">Enter a message here...</string>
+    <string name="button_send">WYŚLIJ</string>
 </resources>
