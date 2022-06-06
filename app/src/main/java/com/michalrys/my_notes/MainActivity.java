@@ -14,6 +14,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
+    public void myNotesApp(View view) {
+        Intent intent = new Intent(this, MyNotesMainActivity.class);
+        startActivity(intent);
+    }
+
     public void counterApp(View view) {
         Intent intent = new Intent(this, DisplayCounter.class);
         startActivity(intent);

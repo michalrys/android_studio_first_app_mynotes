@@ -1,12 +1,15 @@
 <resources>
-    <string name="app_name">My notes</string>
+    <string name="app_name">Michał Ryś - aplikacje</string>
+    <string name="button_my_notes">NOTATNIK APP</string>
+    <string name="button_sending_message">WYSYŁANIE WIADOMOŚCI APP</string>
+    <string name="button_counter">ZLICZACZ APP</string>
     <string name="edit_message">Enter a message here...</string>
     <string name="button_send">WYŚLIJ</string>
-    <string name="button_counter">ZLICZACZ APP</string>
     <string name="counterLabel">Current value is:</string>
     <string name="counterValue">0</string>
     <string name="counterButtonIncrease">ZWIĘKSZ</string>
     <string name="counterButtonDecrease">ZMNIEJSZ</string>
     <string name="counterButtonZero">ZERUJ</string>
-    <string name="button_sending_message">WYSYŁANIE WIADOMOŚCI APP</string>
+    <string name="my_notes_header">Here are my notes:</string>
+    <string name="mynotes_button_new_note">NOWA NOTATKA</string>
 </resources>
