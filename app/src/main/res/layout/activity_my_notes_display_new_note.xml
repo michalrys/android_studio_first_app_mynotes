@@ -48,7 +48,8 @@
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
         android:text="@string/mynotes_button_new_note_save"
-        app:backgroundTint="#4CAF50" />
+        app:backgroundTint="#4CAF50"
+        android:onClick="saveNote"/>
 
     <Button
         android:layout_width="match_parent"
