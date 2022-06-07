@@ -85,6 +85,10 @@ public class MyNotesMainActivity extends AppCompatActivity {
 //            mynotes.setAdapter(adapter);
 //        });
 
+        List<Note> allNotes = dbManager.getAll();
+        ListView notesList = findViewById(R.id.mynotes_list);
+        ArrayAdapter<Note> noteArrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, allNotes);
+        notesList.setAdapter(noteArrayAdapter);
 
 
     }
