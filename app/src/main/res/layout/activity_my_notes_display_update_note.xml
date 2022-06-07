@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MyNotesDisplayUpdateNoteActivity" >
+    tools:context=".MyNotesDisplayUpdateNoteActivity">
 
     <TextView
         android:layout_width="match_parent"
@@ -45,17 +45,33 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
+        android:onClick="saveNote"
         android:text="@string/mynotes_button_update_note_save"
-        app:backgroundTint="#4CAF50"
-        android:onClick="saveNote"/>
+        app:backgroundTint="#4CAF50" />
 
-    <Button
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:text="@string/mynotes_button_update_note_cancel"
-        app:backgroundTint="#F44336"
-        android:onClick="cancelNewNoteAndGoBack"/>
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:onClick="cancelUpdatingNoteAndGoBack"
+            android:text="@string/mynotes_button_update_note_cancel"
+            app:backgroundTint="#3F51B5" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:onClick="deleteThisNoteAndGoBack"
+            android:text="@string/mynotes_button_update_note_delete"
+            app:backgroundTint="#F44336" />
+    </LinearLayout>
 
 
 </LinearLayout>

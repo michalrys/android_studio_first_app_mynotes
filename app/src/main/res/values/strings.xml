@@ -20,4 +20,5 @@
     <string name="mynotes_button_new_note_cancel">ODRZUĆ</string>
     <string name="mynotes_button_update_note_save">ZAPISZ</string>
     <string name="mynotes_button_update_note_cancel">COFNIJ</string>
+    <string name="mynotes_button_update_note_delete">USUŃ</string>
 </resources>

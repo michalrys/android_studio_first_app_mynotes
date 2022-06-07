@@ -55,8 +55,16 @@ public class MyNotesDisplayUpdateNoteActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void cancelNewNoteAndGoBack(View view) {
+    public void cancelUpdatingNoteAndGoBack(View view) {
         Intent intent = new Intent(this, MyNotesMainActivity.class);
         startActivity(intent);
+    }
+
+    public void deleteThisNoteAndGoBack(View view) {
+        Intent intent = new Intent(this, MyNotesMainActivity.class);
+        startActivity(intent);
+
+        DataBaseManager dbManager = new DataBaseManager(this);
+        dbManager.deleteNote(Math.toIntExact(noteId));
     }
 }

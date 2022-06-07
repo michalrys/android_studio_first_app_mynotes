@@ -57,7 +57,7 @@
         android:layout_margin="5dp"
         android:text="@string/mynotes_button_new_note_cancel"
         app:backgroundTint="#F44336"
-        android:onClick="cancelNewNoteAndGoBack"/>
+        android:onClick="cancelUpdatingNoteAndGoBack"/>
 
 
 </LinearLayout>
