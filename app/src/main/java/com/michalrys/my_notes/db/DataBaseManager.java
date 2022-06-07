@@ -41,7 +41,7 @@ public class DataBaseManager extends SQLiteOpenHelper {
         db.execSQL(sqlQuery);
     }
 
-    public void addNote(Note note) {
+    public void addNote(RoomNote note) {
         SQLiteDatabase db = getWritableDatabase();
         ContentValues inputValues = new ContentValues();
         inputValues.put("title", note.getTitle());
@@ -57,7 +57,7 @@ public class DataBaseManager extends SQLiteOpenHelper {
     }
 
 
-    public void updateNote(Note note) {
+    public void updateNote(RoomNote note) {
         SQLiteDatabase db = getWritableDatabase();
         ContentValues inputValues = new ContentValues();
         inputValues.put("title", note.getTitle());
@@ -67,7 +67,7 @@ public class DataBaseManager extends SQLiteOpenHelper {
         db.update("notes", inputValues, "id=?", args);
     }
 
-    public void updateNoteUPDATE(Note note) {
+    public void updateNoteUPDATE(RoomNote note) {
         SQLiteDatabase db = getWritableDatabase();
         Long id = note.getId();
         String title = note.getTitle();
@@ -79,13 +79,13 @@ public class DataBaseManager extends SQLiteOpenHelper {
         db.execSQL(String.format("UPDATE NOTES SET TITLE ='%s', CONTENT = '%s', CREATED = '%s' WHERE NR = %d", title, content, created, id));
     }
 
-    public List<Note> getAll() {
-        List<Note> notes = new LinkedList<>();
+    public List<RoomNote> getAll() {
+        List<RoomNote> notes = new LinkedList<>();
         String[] columns = {"id", "title", "content", "created"};
         SQLiteDatabase db = getReadableDatabase();
         Cursor cursor = db.query("notes", columns, null, null, null, null, null);
         while (cursor.moveToNext()) {
-            Note note = new Note();
+            RoomNote note = new RoomNote();
             note.setId(cursor.getLong(0));
             note.setTitle(cursor.getString(1));
             note.setContent(cursor.getString(2));
@@ -95,8 +95,8 @@ public class DataBaseManager extends SQLiteOpenHelper {
         return notes;
     }
 
-    public Note get(int id) {
-        Note note = new Note();
+    public RoomNote get(int id) {
+        RoomNote note = new RoomNote();
         SQLiteDatabase db = getReadableDatabase();
         String[] columns = {"id", "title", "content", "created"};
         String args[] = {id + ""};
@@ -111,15 +111,15 @@ public class DataBaseManager extends SQLiteOpenHelper {
         return note;
     }
 
-    public List<Note> getByTitle(String title) {
-        List<Note> notes = new LinkedList<Note>();
+    public List<RoomNote> getByTitle(String title) {
+        List<RoomNote> notes = new LinkedList<RoomNote>();
         SQLiteDatabase db = getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT ID,TITLE,CONTENT,CREATED FROM NOTES WHERE TITLE='"
                 + title + "' ORDER BY TITLE ASC", null);
         //Cursor cursor =db.rawQuery
         //("select id,title,content,created from notes where title=?	order by title asc", title);
         while (cursor.moveToNext()) {
-            Note note = new Note();
+            RoomNote note = new RoomNote();
             note.setId(cursor.getLong(0));
             note.setTitle(cursor.getString(1));
             note.setContent(cursor.getString(2));

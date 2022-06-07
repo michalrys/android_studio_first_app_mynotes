@@ -1,17 +1,20 @@
 package com.michalrys.my_notes;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.LiveData;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.michalrys.my_notes.db.DataBaseManager;
-import com.michalrys.my_notes.db.Note;
+import com.michalrys.my_notes.db.RoomDao;
+import com.michalrys.my_notes.db.RoomNote;
+import com.michalrys.my_notes.db.RoomNoteDatabase;
 
-import java.time.LocalDateTime;
+import java.util.List;
 
 public class MyNotesMainActivity extends AppCompatActivity {
 
@@ -58,8 +61,27 @@ public class MyNotesMainActivity extends AppCompatActivity {
 //        Log.d("DB", "Updated noted 1: " + noteUpdated);
         // ends basic operations -----------
 
+        // ROOM
+        RoomNoteDatabase db = RoomNoteDatabase.getDatabase(this);
+        RoomDao roomDao = db.roomDao();
 
+        RoomNoteDatabase.databaseWriteExecutor.execute(() -> {
+            roomDao.deleteAll();
+            roomDao.insertAll(
+                    new RoomNote("Lista zakupów", "1. Masło\n2. Chleb\n3. Benzyna", "2022-06-05 20:19"),
+                    new RoomNote("Odsłuchać", "1. Myslovitz\n2. Pogodno\n3. Melt-Banana", "2022-06-06 06:11"),
+                    new RoomNote("Kochany pamiętniku", "Na górze róże na dole fiołki a pada deszcz.", "2022-06-07 20:17"));
+        });
 
+        LiveData<List<RoomNote>> notes = roomDao.getAll();
+        notes.observe(this, words -> {
+            for (RoomNote roomNote : words) {
+                Log.d("DB", roomNote.toString());
+            }
+            ArrayAdapter<RoomNote> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, words);
+            ListView mynotes = findViewById(R.id.mynotes_list);
+            mynotes.setAdapter(adapter);
+        });
     }
 
     public void createNewNote(View view) {

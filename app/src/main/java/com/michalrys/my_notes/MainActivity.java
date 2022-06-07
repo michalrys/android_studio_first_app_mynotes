@@ -4,11 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-
-import com.michalrys.my_notes.db.DataBaseManager;
-import com.michalrys.my_notes.db.Note;
 
 public class MainActivity extends AppCompatActivity {
 
