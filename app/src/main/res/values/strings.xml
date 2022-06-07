@@ -18,4 +18,6 @@
     <string name="mynotes_new_message_content">jakaś treść notatki...</string>
     <string name="mynotes_button_new_note_save">ZAPISZ</string>
     <string name="mynotes_button_new_note_cancel">ODRZUĆ</string>
+    <string name="mynotes_button_update_note_save">ZAPISZ</string>
+    <string name="mynotes_button_update_note_cancel">COFNIJ</string>
 </resources>
