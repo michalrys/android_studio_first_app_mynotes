@@ -17,17 +17,17 @@ import java.util.List;
 public class DataBaseManager extends SQLiteOpenHelper {
 
     public DataBaseManager(Context context) {
-        super(context, "kontakty.db", null, 1);
+        super(context, "notes2.db", null, 1);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-//        db.execSQL("DROP TABLE IF EXISTS NOTES;"); // added in order to have low ids
+        db.execSQL("DROP TABLE NOTES;"); // added in order to have low ids
         db.execSQL(
                 "CREATE TABLE NOTES(" +
-                        "NR INTEGER PRIMARY KEY AUTOINCREMENT," +
+                        "ID INTEGER PRIMARY KEY AUTOINCREMENT," +
                         "TITLE CHAR(40)," +
-                        "CONTENT VARCHAR(100000)," +
+                        "CONTENT CHAR(100)," +
                         "CREATED CHAR(50));" +
                         "");
     }
@@ -36,6 +36,10 @@ public class DataBaseManager extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
     }
 
+    public void runQuery(String sqlQuery) {
+        SQLiteDatabase db = getWritableDatabase();
+        db.execSQL(sqlQuery);
+    }
 
     public void addNote(Note note) {
         SQLiteDatabase db = getWritableDatabase();
@@ -49,7 +53,7 @@ public class DataBaseManager extends SQLiteOpenHelper {
     public void deleteNote(int id) {
         SQLiteDatabase db = getWritableDatabase();
         String[] arguements = {"" + id};
-        db.delete("notes", "nr=?", arguements);
+        db.delete("notes", "id=?", arguements);
     }
 
 
@@ -76,7 +80,7 @@ public class DataBaseManager extends SQLiteOpenHelper {
     }
 
     public List<Note> getAll() {
-        List<Note> notes = new LinkedList<Note>();
+        List<Note> notes = new LinkedList<>();
         String[] columns = {"id", "title", "content", "created"};
         SQLiteDatabase db = getReadableDatabase();
         Cursor cursor = db.query("notes", columns, null, null, null, null, null);

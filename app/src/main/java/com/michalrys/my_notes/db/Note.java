@@ -9,6 +9,12 @@ public class Note {
     public Note() {
     }
 
+    public Note(String title, String content, String created) {
+        this.title = title;
+        this.content = content;
+        this.created = created;
+    }
+
     public Note(Long id, String title, String content, String created) {
         this.id = id;
         this.title = title;
