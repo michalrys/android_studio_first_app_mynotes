@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".DisplayCounter" >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/counterLabel"
+        android:textSize="48sp" />
+
+    <TextView
+        android:id="@+id/counterValue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="60sp"
+        android:text="@string/counterValue"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="increaseByOne"
+        android:text="@string/counterButtonIncrease"
+        android:textSize="60sp"
+        app:backgroundTint="#FF4343" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="decreaseByOne"
+        android:text="@string/counterButtonDecrease"
+        android:textSize="60sp"
+        app:backgroundTint="#4362FF" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="setZero"
+        android:text="@string/counterButtonZero"
+        android:textSize="60sp"
+        app:backgroundTint="#50FF43" />
+
+</LinearLayout>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MyNotesDisplayNewNoteActivity" >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/mynotes_title_header"
+        android:textSize="34sp" />
+
+    <EditText
+        android:id="@+id/mynotes_new_message_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="#FFF1BE"
+        android:hint="@string/mynotes_new_message_title_hint"
+        android:textSize="20sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/mynotes_new_message_content_header"
+        android:textSize="34sp" />
+
+
+    <EditText
+        android:id="@+id/mynotes_new_message_content"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="#FFF1BE"
+        android:gravity="top|left"
+        android:hint="@string/mynotes_new_message_content"
+        android:textSize="20sp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="@string/mynotes_button_new_note_save"
+        app:backgroundTint="#4CAF50"
+        android:onClick="saveNote"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="@string/mynotes_button_new_note_cancel"
+        app:backgroundTint="#F44336"
+        android:onClick="cancelUpdatingNoteAndGoBack"/>
+
+
+</LinearLayout>
